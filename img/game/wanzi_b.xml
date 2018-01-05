@@ -1,0 +1,6 @@
+<TextureAtlas imagePath="sprites.png">
+	<SubTexture name="丸子-白油0001_000.png" x="119" y="0" width="117" height="109"/>
+	<SubTexture name="丸子-白油0001_001.png" x="0" y="113" width="117" height="110"/>
+	<SubTexture name="丸子-白油0001_002.png" x="0" y="0" width="117" height="111"/>
+	<SubTexture name="丸子-白油0001_003.png" x="0" y="0" width="117" height="111"/>
+</TextureAtlas>

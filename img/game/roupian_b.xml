@@ -1,0 +1,6 @@
+<TextureAtlas imagePath="sprites.png">
+	<SubTexture name="肉片-白油0001_000.png" x="276" y="0" width="136" height="104"/>
+	<SubTexture name="肉片-白油0001_001.png" x="138" y="0" width="136" height="106"/>
+	<SubTexture name="肉片-白油0001_002.png" x="276" y="0" width="136" height="104"/>
+	<SubTexture name="肉片-白油0001_003.png" x="0" y="0" width="136" height="109"/>
+</TextureAtlas>

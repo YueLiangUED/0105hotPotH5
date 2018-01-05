@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>火锅游戏</title>
+  <link rel="stylesheet" href="./css/game.css">
+  <link rel="stylesheet" href="./css/animate.css">
+</head>
+<body>
+  <div id='game-container'></div>
+  <div id='orientation'></div>
+
+  <!-- 读取游戏的页面 -->
+  <div id="loading">
+        <img src="./img/game/guoGif.gif" style=" width: 40%;" class="logo">
+        <p id='progress'></p>
+  </div>
+
+
+  <!-- 活动说明遮罩层 -->
+  <div class="rule_shadow shadow">
+    <div class="rule_box animated zoomIn">
+      <img class="close_btn" src='./img/shadow/close_icon.png' alt="">
+      <p class="rule_message">
+        活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明活动说明
+      </p>
+    </div>
+  </div>
+
+  <!-- 我的奖品遮罩层 -->
+  <div class="prize_shadow shadow">
+    <div class="prize_box animated zoomIn">
+      <img class="close_btn" src='./img/shadow/close_icon.png' alt="">
+      <div class="prize_scorll">
+        <div class="prize prize_500m">
+          <p class="prize_phone">136XXXX1257</p>
+          <p class="prize_date">2017-03-01</p>
+        </div>
+        <div class="prize prize_1g">
+          <p class="prize_phone">136XXXX1257</p>
+          <p class="prize_date">2017-03-01</p>
+        </div>
+        <div class="prize prize_500m">
+          <p class="prize_phone ">136XXXX1257</p>
+          <p class="prize_date">2017-03-01</p>
+        </div>
+        <div class="prize prize_500m">
+          <p class="prize_phone">136XXXX1257</p>
+          <p class="prize_date">2017-03-01</p>
+        </div>
+        <div class="prize prize_1g">
+          <p class="prize_phone">136XXXX1257</p>
+          <p class="prize_date">2017-03-01</p>
+        </div>
+        <div class="prize prize_500m">
+          <p class="prize_phone">136XXXX1257</p>
+          <p class="prize_date">2017-03-01</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 我的食材遮罩层 -->
+  <div class="food_shadow shadow">
+    <div class="food_box animated zoomIn">
+      <img class="close_btn" src='./img/shadow/close_icon.png' alt="">
+      <div class="food_warpper">
+        <div class="food">
+          <img src="./img/shadow/gongwan_c.png" alt="">
+          <p class="food_count">12</p>
+        </div>
+        <div class="food">
+          <img src="./img/shadow/haishen_h.png" alt="">
+        </div>
+        <div class="food">
+          <img src="./img/shadow/jichi_c.png" alt="">
+          <p class="food_count">1</p>
+        </div>
+        <div class="food">
+          <img src="./img/shadow/xiajiao_c.png" alt="">
+          <p class="food_count">9</p>
+        </div>
+        <div class="food">
+          <img src="./img/shadow/xianggu_c.png" alt="">
+          <p class="food_count">5</p>
+        </div>
+        <div class="food">
+          <img src="./img/shadow/yangroujuan_h.png" alt="">
+        </div>
+        <div class="food">
+          <img src="./img/shadow/niurou_c.png" alt="">
+          <p class="food_count">4</p>
+        </div>
+        <div class="food">
+          <img src="./img/shadow/zhangyu_c.png" alt="">
+          <p class="food_count">6</p>
+        </div>
+        <div class="food">
+          <img src="./img/shadow/fensi_c.png" alt="">
+          <p class="food_count">3</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 游戏失败弹窗 -->
+  <div class="game_over_shadow shadow">
+    <div class="game_over_box animated zoomIn">
+      <img class="close_btn game_over_close_btn" src='./img/shadow/close_icon.png' alt="">
+      <p class="game_over_message">很遗憾您本次未成功，继续努力 ，一定要看准时机再下手哦！</p>
+      <img class="game_over_btn" src="./img/shadow/again_btn.png" alt="">
+    </div>
+  </div>
+
+  <!-- 机会用完弹窗 -->
+  <div class="nochance_shadow shadow">
+    <div class="nochance_box animated zoomIn">
+      <img class="close_btn" src='./img/shadow/close_icon.png' alt="">
+      <img class="nochance_img" src="./img/shadow/yihanImg.png" alt="">
+      <img class="nochance_btn" src="./img/shadow/tomorrow.png" alt="">
+    </div>
+  </div>
+  
+  <!-- 二维码弹窗 -->
+  <div class="qr_shadow shadow">
+    <div class="qr_box animated zoomIn">
+      <img class="close_btn qr_close_btn" src='./img/shadow/close_icon.png' alt="">
+      <img class="qr" src="./img/shadow/qr.png" alt="">
+      <p class="qr_message">长按开启火锅大奖</p>
+    </div>
+  </div>
+  
+  <!-- 发送验证码弹窗 -->
+  <div class="phone_shadow shadow">
+    <div class="phone_box animated zoomIn">
+      <img class="close_btn" src='./img/shadow/close_icon.png' alt="">
+      <div class="input_phone">
+        <input class="phone_number" type="text" placeholder="填写手机号">
+      </div>
+      <div class="input_ma">
+        <input class="yanzhengma" type="text" placeholder="填写验证码">
+        <img class="get_btn" src="./img/shadow/huoqu.png" alt="">
+      </div>
+      <img class="phone_sure" src="./img/shadow/phoneSure.png" alt="">
+    </div>
+  </div>
+
+  <!-- 选择火锅的弹窗 -->
+  <div class="choose_shadow shadow">
+    <div class="choose_box animated zoomIn">
+      <img class="close_btn" src='./img/shadow/close_icon.png' alt="">
+      <div class="hotpot_warpper">
+        <div class="hotpot active" type='0'>
+          <img src="./img/shadow/chongqing_c.png" alt="">
+        </div>
+        <div class="hotpot" type='1'>
+          <img src="./img/shadow/yuanyang.png" alt="">
+        </div>
+        <div class="hotpot" type='2'>
+          <img src="./img/shadow/laobeijing.png" alt="">
+        </div>
+        <div class="hotpot" type='3'>
+          <img src="./img/shadow/chaoshan.png" alt="">
+        </div>
+      </div>
+      <img class="choose_sure" src="./img/shadow/sure_btn.png" alt="">
+    </div>
+  </div>
+
+  <!-- 开启奖品页面 -->
+  <div class="guo_shadow shadow">
+    <img class="guo" src="./img/game/guoGif.gif" alt="">
+    <img class="jingxi" src="./img/shadow/jingxi.png" alt="">
+  </div>
+
+  <!-- 获得奖品的页面 -->
+  <div class="getPrize_shadow shadow">
+    <div class="getPrize_box animated zoomIn">
+      <img class="close_btn getPrzie_close" src='./img/shadow/close_icon.png' alt="">
+      <div class="prize_warpper">
+        <img class='prizeFood' src="./img/shadow/jichi_c.png" alt="">
+        <img class="liuliang" src="./img/shadow/prize500m.png" alt="">
+      </div>
+      <img class="myPrize_btn" src="./img/shadow/myPrize.png" alt="">
+      <img class="share_btn" src="./img/shadow/share_btn.png" alt="">
+    </div>
+  </div>
+
+  <!-- 分享弹窗页面 -->
+  <div class="share_shadow shadow">
+    <img class="share_bg" src="./img/shadow/share1.png" alt="">
+    <div class="share_bottom">
+      <img class="share_qr" src="./img/shadow/qr.jpg" alt="">
+    </div>
+  </div>
+
+  <!-- 蒸汽效果页面 -->
+  <div class="cloud_box">
+    <img class="cloud1" src='./img/home/cloud.png' alt="">
+    <img class="cloud2" src='./img/home/cloud.png' alt="">
+    <img class="cloud3" src='./img/home/cloud.png' alt="">
+    <img class="cloud4" src='./img/home/cloud.png' alt="">
+    <img class="cloud5" src='./img/home/cloud.png' alt="">
+  </div>
+
+  <!-- 获得大奖2G流量页面 -->
+  <div class="bigPrize_shadow shadow">
+    <div class="bigPrize_box">
+      <img class="close_btn getPrzie_close" src='./img/shadow/close_icon.png' alt="">
+      <img class="bigPrize2G" src="./img/shadow/2g.png" alt="">
+      <p class="bigPrizeMessage">恭喜您，获得2G流量</p>
+      <img class="bigPrize_share_btn" src="./img/shadow/share_btn.png" alt="">
+    </div>
+  </div>
+
+
+
+  <script src="./js/phaser.min.js"></script>
+  <script src='./js/jquery.min.js'></script>
+  <script src='./js/adapt.js'></script>
+  <script src="./js/states/utils.js"></script>
+  <script src="./js/states/boot.js"></script>
+  <script src="./js/states/preload.js"></script>
+  <script src="./js/states/home.js"></script>
+  <script src="./js/states/game.js"></script>
+  <script src="./js/app.js"></script>
+
+</body>
+</html>

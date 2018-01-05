@@ -1,0 +1,6 @@
+<TextureAtlas imagePath="sprites.png">
+	<SubTexture name="香蕉红油0001_000.png" x="183" y="0" width="181" height="105"/>
+	<SubTexture name="香蕉红油0001_001.png" x="0" y="106" width="181" height="103"/>
+	<SubTexture name="香蕉红油0001_002.png" x="0" y="0" width="181" height="104"/>
+	<SubTexture name="香蕉红油0001_003.png" x="0" y="0" width="181" height="104"/>
+</TextureAtlas>

@@ -1,0 +1,20 @@
+<TextureAtlas imagePath="sprites.png">
+	<SubTexture name="1.png" x="606" y="0" width="99" height="830"/>
+	<SubTexture name="10.png" x="1010" y="0" width="99" height="830"/>
+	<SubTexture name="11.png" x="1111" y="0" width="99" height="830"/>
+	<SubTexture name="12.png" x="606" y="0" width="99" height="830"/>
+	<SubTexture name="13.png" x="505" y="0" width="99" height="830"/>
+	<SubTexture name="14.png" x="404" y="0" width="99" height="830"/>
+	<SubTexture name="15.png" x="303" y="0" width="99" height="830"/>
+	<SubTexture name="16.png" x="202" y="0" width="99" height="830"/>
+	<SubTexture name="17.png" x="101" y="0" width="99" height="830"/>
+	<SubTexture name="18.png" x="0" y="0" width="99" height="830"/>
+	<SubTexture name="2.png" x="1111" y="0" width="99" height="830"/>
+	<SubTexture name="3.png" x="1010" y="0" width="99" height="830"/>
+	<SubTexture name="4.png" x="909" y="0" width="99" height="830"/>
+	<SubTexture name="5.png" x="808" y="0" width="99" height="830"/>
+	<SubTexture name="6.png" x="707" y="0" width="99" height="830"/>
+	<SubTexture name="7.png" x="707" y="0" width="99" height="830"/>
+	<SubTexture name="8.png" x="1212" y="0" width="99" height="830"/>
+	<SubTexture name="9.png" x="909" y="0" width="99" height="830"/>
+</TextureAtlas>

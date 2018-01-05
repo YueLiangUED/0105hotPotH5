@@ -1,0 +1,622 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+ 
+ html,
+ body {
+     width: 100%;
+     height: 100%;
+     font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+     overflow: hidden;
+     background: #f2cd03;
+ }
+ 
+ body {
+     margin: 0px 0px 1px 0px;
+     /* the extra 1px allows the iOS inner/outer check to work */
+     background: #000;
+ }
+
+ #game-container{
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+ }
+ 
+ #orientation {
+     margin: 0 auto;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-image: url('../img/orientation.jpg');
+     background-repeat: no-repeat;
+     background-position: center;
+     background-color: rgb(0, 0, 0);
+     z-index: 999;
+     display: none;
+ }
+
+#loading{
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: #000;
+     text-align: center;
+     z-index: 100;
+     background: #f2cd03;
+
+}
+
+#loading img{
+     position: absolute;
+     top: 40%;
+     left: 50%;
+     -webkit-transform: translate(-50%, -50%);
+     -ms-transform: translate(-50%, -50%);
+     -o-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+     color: #ff6000;
+}
+
+#loading #progress{
+     position: absolute;
+     top: 60%;
+     left: 50%;
+     -webkit-transform: translate(-50%, -50%);
+     -ms-transform: translate(-50%, -50%);
+     -o-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+     color: #ffffff;
+     font-size: 0.3rem;
+}
+
+#loading .tip{
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 30px;
+      line-height: 1.6;
+}
+
+
+.shadow{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background:rgba(0,0,0,0.9);
+  z-index: 1000;
+  display: none;
+}
+
+.active{
+  display: block;
+}
+
+.close_btn{
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  right: -0.2rem;
+  top:-0.2rem;
+}
+
+.rule_box{
+  width: 6rem;
+  height: 9rem;
+  margin: 1rem auto;
+  background:url(../img/shadow/rule.png) no-repeat;
+  background-size: 100%;
+  position: relative;
+  padding-top: 1.2rem;
+}
+
+.rule_message{
+  font-size: 0.3rem;
+  padding: 0.5rem;
+  color: #451410;
+}
+
+.prize_box{
+  width: 6rem;
+  height: 9rem;
+  margin: 1rem auto;
+  background:url(../img/shadow/prizeBox.png) no-repeat;
+  background-size: 100%;
+  position: relative;
+  z-index: 101;
+  padding-top: 1.3rem;
+}
+
+.prize{
+  width: 5rem;
+  height: 2.2rem;
+  margin: 0.2rem auto;
+  font-size: 0.25rem;
+}
+
+.prize_scorll{
+  width: 100%;
+  height: 90%;
+  overflow-y: scroll;
+}
+
+.prize_500m{
+  background:url(../img/shadow/500m.png) no-repeat;
+  background-size: 100%;
+}
+
+.prize_1g{
+  background:url(../img/shadow/1g.png) no-repeat;
+  background-size: 100%;
+}
+
+.prize_phone{
+  padding-top: 0.62rem;
+  padding-left: 2.85rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.prize_date{
+  padding-top: 0.25rem;
+  padding-left: 3rem;
+  color: #2c2c2d;
+  font-weight: bold;
+}
+
+
+.food_shadow{
+  z-index: 1001;
+}
+
+.food_box{
+  width: 6rem;
+  height: 9rem;
+  margin: 1rem auto;
+  background:url(../img/shadow/foodBox.png) no-repeat;
+  background-size: 100%;
+  position: relative;
+  z-index: 101;
+  padding-top: 1.8rem;
+}
+
+.food_warpper{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.food{
+  width: 2rem;
+  margin-top: 0.1rem;
+  position: relative;
+}
+
+.food>img{
+  display: block;
+  width: 1.5rem;
+  margin: 0 auto;
+}
+
+.food_count{
+  width: 0.5rem;
+  height: 0.5rem;
+  position: absolute;
+  border-radius: 50%;
+  top:-0.1rem;
+  right: 0.1rem;
+  text-align: center;
+  line-height: 0.5rem;
+  background: #d8220d;
+  font-size: 0.3rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.game_over_box{
+  width: 5.5rem;
+  height: 7rem;
+  margin: 2.5rem auto;
+  background:url(../img/shadow/yihanBox.png) no-repeat;
+  background-size: 100%;
+  position: relative;
+  z-index: 101;
+  padding-top: 1.5rem;
+}
+
+.game_over_message{
+  padding-top: 0.5rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  text-align: center;
+  font-size: 0.35rem;
+  font-weight: bold;
+  color: #451410;
+}
+
+.game_over_btn{
+  display: block;
+  width: 3rem;
+  margin-left:1.25rem;
+  margin-top: 1rem;
+}
+
+.nochance_box{
+  width: 5.5rem;
+  height: 6rem;
+  margin: 2rem auto;
+  background:url(../img/shadow/yihanBox.png) no-repeat;
+  background-size: 100%;
+  position: relative;
+  z-index: 101;
+  padding-top: 1rem;
+}
+
+.nochance_img{
+  display: block;
+  margin:0.2rem auto;
+  width: 3.5rem;
+}
+
+.nochance_btn{
+  display: block;
+  width: 3rem;
+  margin:0.5rem auto;
+}
+
+.qr_box{
+  width: 5.5rem;
+  height: 6rem;
+  margin: 2rem auto;
+  background:url(../img/shadow/qrBox.png) no-repeat;
+  background-size: 100%;
+  position: relative;
+  z-index: 101;
+  padding-top: 2.3rem;
+}
+
+.qr{
+  display: block;
+  width: 2.4rem;
+  margin:0rem auto;
+}
+
+.qr_message{
+  text-align: center;
+  font-size: 0.3rem;
+  padding-top: 0.2rem;
+  color: #e9552d;
+}
+
+.phone_box{
+  width: 6rem;
+  height: 7rem;
+  margin: 2rem auto;
+  background:url(../img/shadow/phoneBox.png) no-repeat;
+  background-size: 100%;
+  position: relative;
+  z-index: 101;
+  padding-top: 2.3rem;
+}
+
+.input_phone{
+  width: 5rem;
+  height: 1.5rem;
+  margin: 0 auto;
+  background: url(../img/shadow/phoneBg.png) no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+
+.input_ma{
+  width: 5rem;
+  height: 1.2rem;
+  margin: 0 auto;
+  background: url(../img/shadow/yanzhengBg.png) no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+
+.get_btn{
+  width: 1.38rem;
+  position: absolute;
+  right: 0;
+}
+
+.phone_sure{
+  display: block;
+  margin:0 auto;
+  width: 3rem;
+}
+
+.phone_number{
+  width: 3.5rem;
+  height: 0.75rem;
+  line-height: 0.75rem;
+  position: absolute;
+  top:0.1rem;
+  left: 1rem;
+  background: #ffffff;
+  border: none;
+  font-size: 0.3rem;
+  padding-left: 0.5rem;
+}
+
+.yanzhengma{
+  width: 2.5rem;
+  height: 0.75rem;
+  line-height: 0.75rem;
+  position: absolute;
+  top:0.08rem;
+  left: 1rem;
+  background: #ffffff;
+  border: none;
+  font-size: 0.3rem;
+  padding-left: 0.5rem;
+}
+
+.choose_box{
+  width: 6rem;
+  height: 9rem;
+  margin: 1rem auto;
+  background:url(../img/shadow/hotpotBox.png) no-repeat;
+  background-size: 100%;
+  position: relative;
+  z-index: 101;
+  padding-top: 2.5rem;
+}
+
+.hotpot_warpper{
+  width: 6rem;
+  height: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0.45rem;
+}
+
+.hotpot{
+  width: 2.2rem;
+  height: 2.5rem;
+  overflow: hidden;
+  margin:0 0.2rem;
+}
+
+.hotpot>img{
+  display: block;
+  width: 1.8rem;
+  margin:0 auto;
+}
+
+.choose_sure{
+  width: 3rem;
+  display: block;
+  margin: 0.2rem auto;
+}
+
+
+.guo{
+  display: block;
+  width: 4.5rem;
+  margin:1.5rem auto;
+}
+
+.jingxi{
+  display: block;
+  width: 4rem;
+  margin:0 auto;
+}
+
+
+.getPrize_box{
+  width: 6rem;
+  height: 7rem;
+  margin: 2rem auto;
+  background:url(../img/shadow/getPrizeBox.png) no-repeat;
+  background-size: 100%;
+  position: relative;
+  z-index: 101;
+  padding-top: 1.5rem;
+}
+
+.prize_warpper{
+  display: flex;
+  justify-content:center;
+}
+
+.prizeFood{
+  width:1.2rem;
+  height: 1.5rem;
+  margin: 0.3rem;
+  margin-top: 0;
+}
+
+.liuliang{
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0.3rem;
+  margin-top: 0;
+}
+
+.myPrize_btn{
+  display: block;
+  width: 3.5rem;
+  margin: 0.3rem auto;
+}
+
+.share_btn{
+  display: block;
+  width: 3.5rem;
+  margin: 0.3rem auto;
+}
+
+.bigPrize_box{
+  width: 6rem;
+  height: 7rem;
+  margin: 2rem auto;
+  background:url(../img/shadow/getPrizeBox.png) no-repeat;
+  background-size: 100%;
+  position: relative;
+  z-index: 101;
+  padding-top: 1.5rem;
+}
+
+.share_shadow{
+  background: #f8d53d;
+  z-index: 1002;
+  overflow: hidden;
+}
+
+.share_bg{
+  display: block;
+  width: 7.2rem;
+  margin: 0 auto;
+}
+.share_bottom{
+  display: block;
+  width: 7.2rem;
+  height: 4rem;
+  background:url(../img/shadow/share_bottom.png) no-repeat;
+  background-size: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.share_qr{
+  width: 2rem;
+  position: absolute;
+  top:0.3rem;
+  right: 0.2rem;
+}
+
+
+.bigPrize2G{
+  display: block;
+  width: 3rem;
+  margin: 0 auto;
+}
+
+.bigPrizeMessage{
+  text-align: center;
+  font-size: 0.4rem;
+  font-weight: bold;
+  margin:0.3rem;
+  color: #451410;
+}
+
+.bigPrize_share_btn{
+  display: block;
+  width: 4rem;
+  margin:0 auto;
+}
+
+
+.cloud_box{
+  width: 7.5rem;
+  height: 5rem;
+  position: absolute;
+  top:1.5rem;
+  left: 0;
+  z-index: 999;
+  pointer-events:none;
+  display: none;
+/*  animation:mymove 2s infinite;
+  -webkit-animation:mymove 2s infinite;
+  animation-direction:alternate;
+  -webkit-animation-direction:alternate;*/
+}
+
+.cloud1{
+  position: absolute;
+  width:1rem;
+  top:2rem;
+  left: 3.2rem;
+  animation:cloud1 2s infinite;
+  -webkit-animation:cloud1 2s infinite;
+/*  animation-direction:alternate;
+  -webkit-animation-direction:alternate;*/
+}
+
+.cloud2{
+  position: absolute;
+  width:0.6rem;
+  top:1.8rem;
+  left: 1.5rem;
+  animation:cloud2 2s infinite;
+  -webkit-animation:cloud2 2s infinite;
+}
+
+.cloud3{
+  position: absolute;
+  width:0.5rem;
+  top:4rem;
+  left: 1.8rem;
+  animation:cloud2 2s infinite;
+  -webkit-animation:cloud2 2s infinite;
+}
+
+.cloud4{
+  position: absolute;
+  width:0.7rem;
+  top:4rem;
+  left: 5rem;
+  animation:cloud2 2s infinite;
+  -webkit-animation:cloud2 2s infinite;
+}
+
+.cloud5{
+  position: absolute;
+  width:0.3rem;
+  top:2.4rem;
+  left: 4.5rem;
+  animation:cloud2 2s infinite;
+  -webkit-animation:cloud2 2s infinite;
+}
+
+
+
+@keyframes mymove
+{
+from{transform: translateX(0rem) translateY(0rem);}
+to{transform: translateX(0.2rem) translateY(-1rem);}
+}
+
+@-webkit-keyframes mymove /*Safari and Chrome*/
+{
+from{transform: translateX(0rem) translateY(0rem);}
+to{transform: translateX(0.2rem) translateY(-1rem);}
+}
+
+@keyframes cloud1
+{
+from{transform: translateX(0rem) translateY(0rem) scale(1,1);opacity:1;}
+to{transform: translateX(1rem) translateY(-2rem) scale(4,4);opacity:0;}
+}
+
+@-webkit-keyframes mymove /*Safari and Chrome*/
+{
+from{transform: translateX(0rem) translateY(0rem) scale(1,1);opacity:1;}
+to{transform: translateX(1rem) translateY(-2rem) scale(4,4);opacity:0;}
+}
+
+@keyframes cloud2
+{
+from{transform: translateX(0rem) translateY(0rem) scale(1,1);opacity:1;}
+to{transform: translateX(0.5rem) translateY(-2rem) scale(4,4);opacity:0;}
+}
+
+@-webkit-keyframes mymove /*Safari and Chrome*/
+{
+from{transform: translateX(0rem) translateY(0rem) scale(1,1);opacity:1;}
+to{transform: translateX(-0.5rem) translateY(-2rem) scale(4,4);opacity:0;}
+}
